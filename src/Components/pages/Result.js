@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Logo from '../Logo';
 
 class Result extends Component {
     constructor(props) {
@@ -8,6 +9,7 @@ class Result extends Component {
     render() {
         return (
             <div>
+                <Logo />
                 <p>Result page</p>
             </div>
         );
