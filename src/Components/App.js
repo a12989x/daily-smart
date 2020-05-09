@@ -5,7 +5,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 // import SearchBar from './SearchBar';
 import RecentPosts from './RecentPosts';
 import Home from './pages/Home';
-import Result from './pages/Result';
+import Results from './pages/Results';
 
 function App() {
     return (
@@ -13,7 +13,7 @@ function App() {
             <BrowserRouter>
                 <Switch>
                     <Route exact path="/" component={Home} />
-                    <Route exact path="/result" component={Result} />
+                    <Route exact path="/results" component={Results} />
                 </Switch>
                 <RecentPosts />
             </BrowserRouter>
