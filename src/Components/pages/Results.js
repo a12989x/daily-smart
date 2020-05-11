@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+
 import Logo from '../Logo';
+import SearchBar from '../SearchBar';
 
 class Results extends Component {
     constructor(props) {
@@ -9,7 +11,8 @@ class Results extends Component {
     render() {
         return (
             <div>
-                <Logo />
+                <Logo imageSize="8vw" />
+                <SearchBar />
                 <p>Result page</p>
             </div>
         );
