@@ -1,22 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import Logo from '../Logo';
 import SearchBar from '../SearchBar';
 
-class Results extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {};
-    }
-    render() {
-        return (
-            <div>
-                <Logo imageSize="8vw" />
-                <SearchBar />
-                <p>Result page</p>
-            </div>
-        );
-    }
-}
+const Results = (props) => {
+    const handleSearchBarSubmit = (query) => {
+        console.log(query);
+    };
+
+    return (
+        <div>
+            <Logo imageSize="8vw" />
+            <SearchBar
+                handleSearchBarSubmit={(query) => {
+                    handleSearchBarSubmit(query);
+                }}
+            />
+        </div>
+    );
+};
 
 export default Results;

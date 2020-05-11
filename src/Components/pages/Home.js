@@ -1,14 +1,21 @@
 import React from 'react';
 import Logo from '../Logo';
 import SearchBar from '../SearchBar';
-// import RecentPosts from '../RecentPosts';
+import RecentPosts from '../RecentPosts';
 
-function Home() {
+function Home(props) {
+    const handleSearchBarSubmit = (query) => {
+        console.log('trying to handle', query);
+        props.history.push('/results');
+    };
+
     return (
         <div className="home">
             <Logo />
-            <SearchBar />
-            {/* <RecentPosts /> */}
+            <SearchBar
+                handleSearchBarSubmit={(query) => handleSearchBarSubmit(query)}
+            />
+            <RecentPosts />
         </div>
     );
 }
