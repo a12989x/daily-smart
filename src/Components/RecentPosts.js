@@ -7,11 +7,24 @@ const RecentPosts = (props) => {
         props.fetchRecentPosts();
     }, []);
 
+    const renderPosts = () => {
+        return props.recentPosts.map((post, index) => {
+            if (index < 3) {
+                return <li key={index}>{post.title}</li>;
+            }
+        });
+    };
+
     return (
-        <div>
-            <p>Recent Posts</p>
+        <div className="recent-posts">
+            <h3>Recent Posts</h3>
+            <ul>{renderPosts()}</ul>
         </div>
     );
 };
 
-export default connect(null, actions)(RecentPosts);
+const mapStateToProps = (state) => {
+    return { recentPosts: state.posts.recentPosts };
+};
+
+export default connect(mapStateToProps, actions)(RecentPosts);
