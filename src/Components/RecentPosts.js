@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
+import Post from './Post';
 
 const RecentPosts = (props) => {
     useEffect(() => {
@@ -10,7 +11,7 @@ const RecentPosts = (props) => {
     const renderPosts = () => {
         return props.recentPosts.map((post, index) => {
             if (index < 3) {
-                return <li key={index}>{post.title}</li>;
+                return <Post key={post.id} item={post} />;
             }
         });
     };
