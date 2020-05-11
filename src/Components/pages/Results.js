@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Logo from '../Logo';
 
-class Result extends Component {
+class Results extends Component {
     constructor(props) {
         super(props);
         this.state = {};
@@ -16,4 +16,4 @@ class Result extends Component {
     }
 }
 
-export default Result;
+export default Results;

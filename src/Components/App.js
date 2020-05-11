@@ -1,8 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import thunk from 'redux-thunk';
 
-// import Logo from './Logo';
-// import SearchBar from './SearchBar';
 import RecentPosts from './RecentPosts';
 import Home from './pages/Home';
 import Results from './pages/Results';

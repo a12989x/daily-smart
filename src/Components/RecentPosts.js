@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import * as actions from '../actions';
 
-const RecentPosts = () => {
+const RecentPosts = (props) => {
+    useEffect(() => {
+        props.fetchRecentPosts();
+    }, []);
+
     return (
         <div>
             <p>Recent Posts</p>
@@ -8,4 +14,4 @@ const RecentPosts = () => {
     );
 };
 
-export default RecentPosts;
+export default connect(null, actions)(RecentPosts);
