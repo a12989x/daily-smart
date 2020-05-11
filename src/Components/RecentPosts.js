@@ -11,7 +11,7 @@ const RecentPosts = (props) => {
     const renderPosts = () => {
         return props.recentPosts.map((post, index) => {
             if (index < 3) {
-                return <Post key={post.id} item={post} />;
+                return <Post key={post.id} {...post} />;
             }
         });
     };
