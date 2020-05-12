@@ -1,11 +1,13 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
+import * as actions from '../../actions/';
 import Logo from '../Logo';
 import SearchBar from '../SearchBar';
 
 const Results = (props) => {
     const handleSearchBarSubmit = (query) => {
-        console.log(query);
+        props.fetchPostWithQuery(query);
     };
 
     return (
@@ -20,4 +22,4 @@ const Results = (props) => {
     );
 };
 
-export default Results;
+export default connect(null, actions)(Results);

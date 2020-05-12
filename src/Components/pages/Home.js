@@ -1,11 +1,14 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
+import * as actions from '../../actions';
 import Logo from '../Logo';
 import SearchBar from '../SearchBar';
 import RecentPosts from '../RecentPosts';
 
 function Home(props) {
     const handleSearchBarSubmit = (query) => {
-        console.log('trying to handle', query);
+        props.fetchPostWithQuery(query);
         props.history.push('/results');
     };
 
@@ -20,4 +23,4 @@ function Home(props) {
     );
 }
 
-export default Home;
+export default connect(null, actions)(Home);
