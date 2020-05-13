@@ -12,7 +12,7 @@ const RecentPosts = (props) => {
     const renderPosts = () => {
         return props.recentPosts.map((post, index) => {
             if (index < 3) {
-                return <Post key={post.id} {...post} />;
+                return <Post type="recent" key={post.id} {...post} />;
             }
         });
     };

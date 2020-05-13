@@ -5,7 +5,7 @@ import Post from './Post';
 const ResultsPosts = (props) => {
     const renderPost = () => {
         return props.posts.map((post) => {
-            return <Post key={post.id} {...post} />;
+            return <Post type="result" key={post.id} {...post} />;
         });
     };
 
