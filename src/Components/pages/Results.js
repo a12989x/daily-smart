@@ -11,13 +11,15 @@ const Results = (props) => {
     };
 
     return (
-        <div>
+        <div className="results">
             <Logo imageSize="8vw" />
             <SearchBar
                 handleSearchBarSubmit={(query) => {
                     handleSearchBarSubmit(query);
                 }}
             />
+
+            <ul className="results-posts">Results go here</ul>
         </div>
     );
 };
