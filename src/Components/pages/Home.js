@@ -8,8 +8,7 @@ import RecentPosts from '../RecentPosts';
 
 function Home(props) {
     const handleSearchBarSubmit = (query) => {
-        props.fetchPostWithQuery(query);
-        props.history.push('/results');
+        props.fetchPostWithQuery(query, () => props.history.push('/results'));
     };
 
     return (

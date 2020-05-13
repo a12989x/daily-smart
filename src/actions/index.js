@@ -3,7 +3,7 @@ import axios from 'axios';
 import { SET_RECENT_POSTS, SET_RESULTS_POSTS } from './types';
 
 export const fetchRecentPosts = () => {
-    return function (dispatch) {
+    return (dispatch) => {
         axios
             .get('https://api.dailysmarty.com/posts')
             .then((response) => {
@@ -18,16 +18,18 @@ export const fetchRecentPosts = () => {
     };
 };
 
-export const fetchPostWithQuery = (query) => {
-    return function (dispatch) {
+export const fetchPostWithQuery = (query, callback) => {
+    return (dispatch) => {
         axios
             .get(`https://api.dailysmarty.com/search?q=${query}`)
             .then((response) => {
-                console.log(response.data.posts);
                 dispatch({
                     type: SET_RESULTS_POSTS,
                     payload: response.data.posts,
                 });
+                if (callback) {
+                    callback();
+                }
             })
             .catch((error) => {
                 console.error('fetchPostWithQuery', error);
