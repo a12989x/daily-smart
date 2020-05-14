@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
+import AnimateHeight from 'react-animate-height';
 
 const Post = (props) => {
+    const [height, setHeight] = useState(0);
     const { title, url_for_post, associated_topics, post_links } = props;
 
     const renderTopics = () => {
@@ -16,9 +18,6 @@ const Post = (props) => {
     const renderLinks = () => {
         return post_links.map((link, index) => {
             return (
-                // <span className="result-post__link" key={index}>
-                //     {link.link_url}
-                // </span>
                 <a href={link.link_url} key={index}>
                     Useful Link #{index + 1}
                 </a>
@@ -44,6 +43,8 @@ const Post = (props) => {
             <div className="result-post__topics">{renderTopics()}</div>
 
             <a
+                onMouseEnter={() => setHeight(70)}
+                onMouseLeave={() => setHeight(0)}
                 className="result-post__title"
                 href={url_for_post}
                 target="_blank"
@@ -51,7 +52,10 @@ const Post = (props) => {
             >
                 {title}
             </a>
-            <div className="result-post__links">{renderLinks()}</div>
+
+            <AnimateHeight duration={500} height={height}>
+                <div className="result-post__links">{renderLinks()}</div>
+            </AnimateHeight>
         </li>
     ) : null;
 };
