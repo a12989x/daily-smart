@@ -13,7 +13,9 @@ class SearchBar extends Component {
     };
 
     renderInput(field) {
-        return <input type="text" {...field.input} />;
+        return (
+            <input className="searchbar__input" type="text" {...field.input} />
+        );
     }
 
     render() {
@@ -24,7 +26,7 @@ class SearchBar extends Component {
                 className="searchbar"
                 onSubmit={handleSubmit(this.handleFormSubmit)}
             >
-                <label>
+                <label className="searchbar__label">
                     Search DailySmarty
                     <Field name="query" component={this.renderInput} />
                 </label>

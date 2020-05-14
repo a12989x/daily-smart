@@ -7,7 +7,7 @@ const Logo = (props) => {
     const imageSize = { width: props.imageSize ? props.imageSize : '15vw' };
 
     return (
-        <Link to="/">
+        <Link to="/" title="Daily Smarty">
             <img
                 style={imageSize}
                 className="logo"

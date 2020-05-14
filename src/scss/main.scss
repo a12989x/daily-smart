@@ -1,9 +1,13 @@
 /* abstracts */
+@import './abstracts/variables';
 
 /* base */
 @import './base/reset';
 
 /* layout */
+@import './layout/logo';
+@import './layout/searchbar';
+@import './layout/recent-posts';
 
 /* components */
 

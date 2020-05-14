@@ -19,8 +19,8 @@ const RecentPosts = (props) => {
 
     return (
         <div className="recent-posts">
-            <h3>Recent Posts</h3>
-            <ul>{renderPosts()}</ul>
+            <h3 className="recent-posts__title">Recent Posts</h3>
+            <ul className="recent-posts__list">{renderPosts()}</ul>
         </div>
     );
 };
