@@ -1,3 +1,43 @@
-.results {
+.results-page {
     @include default-page-layout;
+    padding: 2.5rem;
+
+    .searchbar {
+        margin: 3rem 0;
+    }
+
+    .results {
+        display: grid;
+        row-gap: 2rem;
+        width: 50vw;
+
+        .result-posts {
+            margin-bottom: 1rem;
+        }
+
+        .result-post {
+            &__topic {
+                color: $secondary-color;
+                font-size: 0.8rem;
+
+                :not(last-child) {
+                    margin-right: 1rem;
+                }
+            }
+
+            &__title {
+                color: $primary-color;
+                font-size: 1.2rem;
+
+                .svg-inline--fa .fa-angle-down .fa-w-10 {
+                    margin-left: 1rem;
+                }
+            }
+
+            a {
+                color: $primary-color;
+                margin-right: 1rem;
+            }
+        }
+    }
 }

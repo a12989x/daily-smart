@@ -12,7 +12,7 @@ function Home(props) {
     };
 
     return (
-        <div className="home">
+        <div className="home-page">
             <Logo />
             <SearchBar
                 handleSearchBarSubmit={(query) => handleSearchBarSubmit(query)}

@@ -12,7 +12,7 @@ const Results = (props) => {
     };
 
     return (
-        <div className="results">
+        <div className="results-page">
             <Logo imageSize="8vw" />
             <SearchBar
                 handleSearchBarSubmit={(query) => {

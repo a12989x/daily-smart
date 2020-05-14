@@ -9,7 +9,7 @@ const ResultsPosts = (props) => {
         });
     };
 
-    return <ul>{renderPost()}</ul>;
+    return <ul className="results">{renderPost()}</ul>;
 };
 
 const mapStateToProps = (state) => {
