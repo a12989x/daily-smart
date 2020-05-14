@@ -1,0 +1,26 @@
+.searchbar {
+    width: 50vw;
+
+    &__label {
+        color: $primary-color;
+        font-size: 1.1rem;
+    }
+
+    &__input {
+        color: $text-color;
+        font-size: 1.3rem;
+        width: 100%;
+        padding: 1rem;
+        margin-top: 1rem;
+        border-radius: 1rem;
+        border: 1px solid $secondary-color;
+        display: block;
+        transition: all 0.3s;
+
+        &:hover,
+        &:active,
+        &:focus {
+            border-color: $primary-color;
+        }
+    }
+}
