@@ -1,0 +1,33 @@
+.recent-posts {
+    &__title {
+        font-size: 1.2rem;
+        margin-bottom: 0.8rem;
+    }
+
+    &__list {
+        display: flex;
+
+        .recent-post {
+            &__title {
+                color: $text-color;
+                font-size: 1.1rem;
+            }
+
+            &__topics {
+                color: $primary-color;
+                font-size: 0.8rem;
+                margin-top: 0.5rem;
+            }
+
+            &__topic {
+                &:not(last-child) {
+                    margin-right: 1rem;
+                }
+            }
+
+            &:not(last-child) {
+                margin-right: 2rem;
+            }
+        }
+    }
+}
