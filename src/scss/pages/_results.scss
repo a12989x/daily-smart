@@ -11,6 +11,10 @@
         row-gap: 2rem;
         width: 50vw;
 
+        @media only screen and (max-width: 640px) {
+            width: 80vw;
+        }
+
         .result-posts {
             margin-bottom: 1rem;
         }

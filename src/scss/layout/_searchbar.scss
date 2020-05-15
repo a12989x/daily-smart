@@ -1,6 +1,10 @@
 .searchbar {
     width: 50vw;
 
+    @media only screen and (max-width: 640px) {
+        width: 80vw;
+    }
+
     &__label {
         color: $primary-color;
         font-size: 1.1rem;
