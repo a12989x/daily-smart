@@ -17,11 +17,30 @@ const Post = (props) => {
         });
     };
 
+    const getNameForPostLink = (str) => {
+        let n = str.lastIndexOf('/');
+        let link = str.substring(n + 1, str.length);
+
+        if (n + 1 === str.length) {
+            link = str.slice(0, n);
+            n = link.lastIndexOf('/');
+            link = str.substring(n + 1, str.length - 1);
+        }
+
+        if (link.includes('.htm')) {
+            link = link.substring(0, link.length - 4);
+        } else if (link.includes('.html')) {
+            link = link.substring(0, link.length - 5);
+        }
+
+        return link;
+    };
+
     const renderLinks = () => {
         return post_links.map((link, index) => {
             return (
                 <a href={link.link_url} key={index}>
-                    Link #{index + 1}
+                    {getNameForPostLink(link.link_url)}
                 </a>
             );
         });
@@ -43,18 +62,19 @@ const Post = (props) => {
             return (
                 <>
                     <a
-                        onMouseEnter={() => setHeight(40)}
-                        onMouseLeave={() => setHeight(0)}
                         className="result-post__title"
                         href={url_for_post}
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        {title} <FontAwesomeIcon icon={faAngleDown} />
+                        {title}
+                        <FontAwesomeIcon icon={faAngleDown} />
                     </a>
                     <AnimateHeight duration={500} height={height}>
                         <div className="result-post__links">
-                            <p>Others Links</p>
+                            <p className="result-post__others-links">
+                                Others Links:
+                            </p>
                             {renderLinks()}
                         </div>
                     </AnimateHeight>
@@ -77,7 +97,11 @@ const Post = (props) => {
             <div className="recent-post__topics">{renderTopics('recent')}</div>
         </li>
     ) : props.type === 'result' ? (
-        <li className="result-post">
+        <li
+            className="result-post"
+            onMouseEnter={() => setHeight(40)}
+            onMouseLeave={() => setHeight(0)}
+        >
             <div className="result-post__topics">{renderTopics('result')}</div>
 
             {renderArrow()}
